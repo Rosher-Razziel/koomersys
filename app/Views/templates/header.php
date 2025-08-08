@@ -1,4 +1,4 @@
-<title>KoomerSys test</title>
+<title>KoomerSys</title>
 
 <!-- Meta -->
 <meta charset="utf-8">
