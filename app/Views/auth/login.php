@@ -19,7 +19,7 @@
           <div class="auth-form-container text-start">
             <form class="auth-form login-form">
               <div class="email mb-3">
-                <label class="sr-only" for="signin-email">Correo</label>
+                <label class="sr-only" for="signin-email">Correo Electronico</label>
                 <input id="signin-email" name="signin-email" type="email" class="form-control signin-email"
                   placeholder="Usuario" required="required">
               </div>
