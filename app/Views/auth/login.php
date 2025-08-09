@@ -12,7 +12,7 @@
         <div class="app-auth-body mx-auto">
           <div class="app-auth-branding mb-4">
             <a class="app-logo" href="<?= base_url(); ?>">
-              <img class="me-2" src="<?= base_url('assets/images/logos/Koomersys.svg'); ?>" alt="logo">
+              <img class="logo-icon me-2" id="logo-icon" src="<?= base_url('assets/images/logos/Koomersys.svg'); ?>" alt="logo">
             </a>
           </div>
           <!-- <h2 class="auth-heading text-center mb-5">Inisiar sesion en KoomerSys</h2> -->
