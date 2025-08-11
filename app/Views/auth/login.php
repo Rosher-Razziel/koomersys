@@ -12,12 +12,12 @@
         <div class="app-auth-body mx-auto">
           <div class="app-auth-branding mb-4">
             <a class="app-logo" href="<?= base_url(); ?>">
-              <img class="logo-icon me-2" id="logo-icon" src="<?= base_url('assets/images/logos/Koomersys.svg'); ?>" alt="logo">
+              <img id="logo-icon" src="<?= base_url('assets/images/logos/Koomersys.svg'); ?>" alt="Logo Koomersys">
             </a>
           </div>
-          <!-- <h2 class="auth-heading text-center mb-5">Inisiar sesion en KoomerSys</h2> -->
+          <h2 class="auth-heading text-center mb-5">Koomersys</h2>
           <div class="auth-form-container text-start">
-            <form class="auth-form login-form">
+            <form id="login-form" class="auth-form login-form">
               <div class="email mb-3">
                 <label class="sr-only" for="signin-email">Correo Electronico</label>
                 <input id="signin-email" name="signin-email" type="email" class="form-control signin-email"
@@ -25,7 +25,7 @@
               </div>
               <div class="password mb-3">
                 <label class="sr-only" for="signin-password">Contraseña</label>
-                <input id="signin-password" name="signin-password" type="password" class="form-control signin-password"
+                <input id="signin-password" name="signin-password" type="password" minlength="8" class="form-control signin-password"
                   placeholder="Contraseña" required="required">
                 <div class="extra mt-3 row justify-content-between">
                   <div class="col-6">
@@ -61,6 +61,7 @@
 				<?php  echo view('templates/notificacion'); ?>
     </div>
   </div>
+  <script src="<?= base_url('assets/js/axios/auth.js'); ?>"></script>
 </body>
 
 </html>
