@@ -36,7 +36,7 @@ class Filters extends BaseFilters
         'performance'   => PerformanceMetrics::class,
         'auth'          => \App\Filters\Auth\AuthFilter::class,
         'role'          => \App\Filters\Auth\RoleFilter::class,
-        'guest'         => \App\Filters\Auth\RedirectIfAuthenticatedFilter::class,
+        'authredirect'         => \App\Filters\Auth\RedirectIfAuthenticatedFilter::class,
     ];
 
     /**
@@ -72,6 +72,7 @@ class Filters extends BaseFilters
      */
     public array $globals = [
         'before' => [
+            // 'rememberme' => \App\Filters\Auth\RememberMeFilter::class,
             // 'honeypot',
             // 'csrf',
             // 'invalidchars',

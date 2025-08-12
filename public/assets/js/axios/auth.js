@@ -12,26 +12,26 @@ const Toast = Swal.mixin({
   }
 });
 
-document.querySelector('.login-form').addEventListener('submit', function(e) {
-    e.preventDefault();
+document.querySelector('.login-form').addEventListener('submit', async function (e) {
+  e.preventDefault();
 
-    let formData = new FormData(this);
+  let formData = new FormData(this);
 
-    axios.post(base_url + 'auth/login', formData)
-        .then(res => {
-            if (res.data.status === 'success') {
-              window.location.href = base_url + 'dashboard';
-            } else {
-                Toast.fire({
-                    icon: "error",
-                    title: res.data.message
-                });
-            }
-        })
-        .catch(err => {
-             Toast.fire({
-                icon: "error",
-                title: res.data.message
-            });
+  await axios.post(base_url + 'auth/login', formData)
+    .then(res => {
+      if (res.data.status === 'success') {
+        window.location.href = base_url + 'dashboard';
+      } else {
+        Toast.fire({
+          icon: "error",
+          title: res.data.message
         });
+      }
+    })
+    .catch(err => {
+      Toast.fire({
+        icon: "error",
+        title: res.data.message
+      });
+    });
 });

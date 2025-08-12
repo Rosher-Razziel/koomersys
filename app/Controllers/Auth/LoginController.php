@@ -15,6 +15,7 @@ class LoginController extends BaseController
 
         $email = $request->getPost('signin-email');
         $password = $request->getPost('signin-password');
+        $remember = $request->getPost('RememberPassword');
 
         $usuarioModel = new UsuarioModel();
         $usuario = $usuarioModel
@@ -46,10 +47,35 @@ class LoginController extends BaseController
             ]
         ]);
 
-        return $this->response->setJSON(['status' => 'success', 'message' => 'Login exitoso']);
+        if ($remember) {
+            $token = bin2hex(random_bytes(32)); // Token seguro
+            $expire = time() + (15 * 60 * 60); // 15 horas
+
+            // Guardar cookie
+            setcookie('remember_token', $token, $expire, "/", "", false, true);
+
+            // Guardar token en DB
+            $usuarioModel->update($usuario['FIUSUARIOID'], [
+                'FCRECORDARTOKEN' => $token,
+                'FDRECORDARTOKENFIN' => date('Y-m-d H:i:s', $expire)
+            ]);
+        }
+
+        return $this->response->setJSON(['status' => 'success', 'message' => 'Login exitoso', 'remember' => $remember]);
     }
 
     public function logout(){
+        // Eliminar cookie
+        setcookie('remember_token', '', time() - 3600, "/", "", false, true);
+
+        // Limpiar DB
+        if (session()->get('usuario.id')) {
+            $usuarioModel = new UsuarioModel();
+            $usuarioModel->update(session()->get('usuario.id'), [
+                'FCRECORDARTOKEN' => null,
+                'FDRECORDARTOKENFIN' => null
+            ]);
+        }
         session()->destroy();
         return redirect()->to(base_url());
     }

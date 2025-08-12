@@ -1,2 +1,5 @@
+Config/App.php
 writable/debugbar/
+writable/session/
+writable/logs/
 .env

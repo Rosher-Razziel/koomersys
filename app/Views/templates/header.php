@@ -24,7 +24,7 @@
 <!-- App CSS -->
 <link id="theme-style" rel="stylesheet" href="<?= base_url('assets/css/portal.css'); ?>">
 <!-- BASE URL -->
-<script> var base_url = '<?= base_url(); ?>';</script>
+<script> let base_url = '<?= base_url(); ?>';</script>
 <!-- SCRIPTS PARA NOTIFICATION Y AXIOS -->
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

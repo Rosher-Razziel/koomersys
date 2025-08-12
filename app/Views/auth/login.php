@@ -15,7 +15,7 @@
               <img id="logo-icon" src="<?= base_url('assets/images/logos/Koomersys.svg'); ?>" alt="Logo Koomersys">
             </a>
           </div>
-          <h2 class="auth-heading text-center mb-5">Koomersys</h2>
+          <!-- <h2 class="auth-heading text-center mb-5">Koomersys</h2> -->
           <div class="auth-form-container text-start">
             <form id="login-form" class="auth-form login-form">
               <div class="email mb-3">
@@ -30,7 +30,7 @@
                 <div class="extra mt-3 row justify-content-between">
                   <div class="col-6">
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="RememberPassword">
+                      <input class="form-check-input" type="checkbox" value="1" id="RememberPassword" name="RememberPassword">
                       <label class="form-check-label" for="RememberPassword">
                         No cerrar sesión
                       </label>

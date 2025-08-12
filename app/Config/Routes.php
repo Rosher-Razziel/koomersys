@@ -5,7 +5,7 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Auth\LoginController::index', ['filter' => 'guest']);
+$routes->get('/', 'Auth\LoginController::index', ['filter' => 'authredirect']);
 $routes->post('/auth/login', 'Auth\LoginController::login');
 $routes->get('/auth/logout', 'Auth\LoginController::logout');
 //----------------------------------------------------------------------------------------------------------
