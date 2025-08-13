@@ -8,6 +8,35 @@ class TausuarioSeeder extends Seeder
 {
     public function run()
     {
-        //
+        $data =[
+            [
+                'FCNOMBREUSUARIO' => 'Rogelio',
+                'FCAPELLIDOPATERNO' => 'Espinosa',
+                'FCAPELLIDOMATERNO' => 'Reyes',
+                'FCEMAIL' => 'respinosa@koomersys.com',
+                'FCCLAVE' => '$2y$10$XKbmag11EnmfwV3nq2e6eukIQF.atG0Hj6gvSOkfpDI4nOHmeVpea',
+                'FIROLID' => 1,
+                'FISUCURSALID' => 1,
+                'FIESTATUS' => 1,
+                'FIEMAILVERIFICADO' => 1,
+                'FDFECHAALTA' => '2025-07-11 00:00:00',
+                'FDFECHAACTUALIZACION' => '2025-07-11 00:00:00'
+            ],
+            [
+                'FCNOMBREUSUARIO' => 'Paulina Mayte',
+                'FCAPELLIDOPATERNO' => 'Sanchez',
+                'FCAPELLIDOMATERNO' => 'Vega',
+                'FCEMAIL' => 'pmsanchez@koomersys.com',
+                'FCCLAVE' => '$2y$10$hcs863LVbkVYXoX375gZjuyo5i8FZaw5KtK6GONR1HyjQ4X9LjdMm',
+                'FIROLID' => 1,
+                'FISUCURSALID' => 1,
+                'FIESTATUS' => 1,
+                'FIEMAILVERIFICADO' => 1,
+                'FDFECHAALTA' => '2025-07-11 00:00:00',
+                'FDFECHAACTUALIZACION' => '2025-07-11 00:00:00'
+            ]
+        ];
+
+        $this->db->table('TAUSUARIO')->insertBatch($data);
     }
 }
