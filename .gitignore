@@ -1,4 +1,4 @@
-Config/App.php
+app/Config/App.php
 writable/debugbar/
 writable/session/
 writable/logs/
