@@ -7,7 +7,7 @@ use CodeIgniter\Database\Migration;
 class Taelementosmenu extends Migration
 {
     public function up(){
-        $this->forge->addField([
+         $this->forge->addField([
             'FIELEMENOMENUID' => [
                 'type' => 'INT',
                 'constraint' => 11,
@@ -47,6 +47,6 @@ class Taelementosmenu extends Migration
     }
 
     public function down(){
-         $this->forge->dropTable('TAELEMENTOSMENU');
+        $this->forge->dropTable('TAELEMENTOSMENU');
     }
 }

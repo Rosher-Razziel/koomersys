@@ -7,7 +7,7 @@ use CodeIgniter\Database\Migration;
 class Tarolpermiso extends Migration
 {
     public function up(){
-        $this->forge->addField([
+         $this->forge->addField([
             'FIROLPERMISOID' => [
                 'type' => 'INT',
                 'constraint' => 11,

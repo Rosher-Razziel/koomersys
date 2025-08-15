@@ -4,33 +4,34 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Tarol extends Migration
+class Tametodopago extends Migration
 {
     public function up(){
         $this->forge->addField([
-            'FIROLID' => [
+            'FIMETODOPAGOID' => [
                 'type' => 'INT',
                 'constraint' => 11,
                 'auto_increment' => true,
                 'null' => false
-            ],
-            'FCNOMBREROL' => [
+            ], 
+            'FCNOMBREPAGO' => [
                 'type' => 'VARCHAR',
                 'constraint' => 50,
+                'unique' => true,
                 'null' => false
             ],
-            'FCDETALLEROL' => [
+            'FCDESCRIPCION' => [
                 'type' => 'VARCHAR',
-                'constraint' => 255,
+                'constraint' => 50,
                 'null' => false
             ]
         ]);
 
-        $this->forge->addKey('FIROLID', true);
-        $this->forge->createTable('TAROL');
+        $this->forge->addKey('FIMETODOPAGOID', true);
+        $this->forge->createTable('TAMETODOPAGO');
     }
 
     public function down(){
-        $this->forge->dropTable('TAROL');
+        $this->forge->dropTable('TAMETODOPAGO');
     }
 }

@@ -11,6 +11,7 @@ class TasucursalSeeder extends Seeder
         $data =[
             [
                 'FCNOMBRESUCURSAL' => 'La ventanita espinosa',
+                'FIMARCAID' => 1,
                 'FDFECHAALTA' => '2025-07-11 00:00:00',
                 'FDFECHAACTUALIZACION' => '2025-07-11 00:00:00',
                 'FCIMAGENSUCURSAL' => 'http://www.winrohs.com/img/logo.png',
@@ -18,6 +19,7 @@ class TasucursalSeeder extends Seeder
             ],
             [
                 'FCNOMBRESUCURSAL' => 'Todo para su pan',
+                'FIMARCAID' => 2,
                 'FDFECHAALTA' => '2025-07-11 00:00:00',
                 'FDFECHAACTUALIZACION' => '2025-07-11 00:00:00',
                 'FCIMAGENSUCURSAL' => 'http://www.winrohs.com/img/logo.png',
@@ -25,6 +27,7 @@ class TasucursalSeeder extends Seeder
             ],
             [
                 'FCNOMBRESUCURSAL' => 'La esquinita',
+                'FIMARCAID' => 3,
                 'FDFECHAALTA' => '2025-07-11 00:00:00',
                 'FDFECHAACTUALIZACION' => '2025-07-11 00:00:00',
                 'FCIMAGENSUCURSAL' => 'http://www.winrohs.com/img/logo.png',
@@ -32,6 +35,7 @@ class TasucursalSeeder extends Seeder
             ],
             [
                 'FCNOMBRESUCURSAL' => 'Starbucks',
+                'FIMARCAID' => 4,
                 'FDFECHAALTA' => '2025-07-11 00:00:00',
                 'FDFECHAACTUALIZACION' => '2025-07-11 00:00:00',
                 'FCIMAGENSUCURSAL' => 'http://www.winrohs.com/img/logo.png',
@@ -39,6 +43,7 @@ class TasucursalSeeder extends Seeder
             ],
             [
                 'FCNOMBRESUCURSAL' => 'Alsea',
+                'FIMARCAID' => 5,
                 'FDFECHAALTA' => '2025-07-11 00:00:00',
                 'FDFECHAACTUALIZACION' => '2025-07-11 00:00:00',
                 'FCIMAGENSUCURSAL' => 'http://www.winrohs.com/img/logo.png',

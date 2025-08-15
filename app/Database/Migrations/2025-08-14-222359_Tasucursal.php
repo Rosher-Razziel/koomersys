@@ -7,11 +7,16 @@ use CodeIgniter\Database\Migration;
 class Tasucursal extends Migration
 {
     public function up(){
-         $this->forge->addField([
+        $this->forge->addField([
         'FISUCURSALID' => [
           'type' => 'INT',
           'constraint' => 11,
           'auto_increment' => true,
+          'null' => false
+        ], 
+        'FIMARCAID' => [
+          'type' => 'INT',
+          'constraint' => 11,
           'null' => false
         ],
         'FCNOMBRESUCURSAL' => [
@@ -40,10 +45,11 @@ class Tasucursal extends Migration
       ]);
 
       $this->forge->addKey('FISUCURSALID', true);
+      $this->forge->addForeignKey('FIMARCAID', 'TAMARCA', 'FIMARCAID');
       $this->forge->createTable('TASUCURSAL');
     }
 
     public function down(){
-        $this->forge->dropTable('TASUCURSAL');
+         $this->forge->dropTable('TASUCURSAL');
     }
 }

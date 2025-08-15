@@ -6,8 +6,8 @@ use CodeIgniter\Database\Migration;
 
 class Tausuario extends Migration
 {
-   public function up(){
-      $this->forge->addField([
+    public function up(){
+         $this->forge->addField([
         'FIUSUARIOID' => [
           'type' => 'INT',
           'constraint' => 11,
@@ -89,6 +89,6 @@ class Tausuario extends Migration
     }
 
     public function down(){
-      $this->forge->dropTable('TAUSUARIO');
+        $this->forge->dropTable('TAUSUARIO');
     }
 }
