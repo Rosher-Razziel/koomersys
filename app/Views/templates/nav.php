@@ -164,7 +164,7 @@
               <img src="assets/images/user.png" alt="user profile">
             </a>
             <ul class="dropdown-menu" aria-labelledby="user-dropdown-toggle">
-              <li><a class="dropdown-item" href="account.html">Cuenta</a></li>
+              <li><a class="dropdown-item" href="account.html"><?= session()->get('usuario.nombre') . ' ' . session()->get('usuario.apellido'); ?></a></li>
               <li><a class="dropdown-item" href="settings.html">Configuracion</a></li>
               <li>
                 <hr class="dropdown-divider">

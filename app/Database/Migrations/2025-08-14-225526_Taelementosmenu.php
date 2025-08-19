@@ -26,9 +26,10 @@ class Taelementosmenu extends Migration
             ],
             'FCINOCOMENU' => [
                 'type' => 'TEXT',
+                'constraint' => 3000,
                 'null' => false
             ],
-            'FIPERMISOID' => [
+            'FIROLID' => [
                 'type' => 'INT',
                 'constraint' => 11,
                 'null' => false
@@ -41,7 +42,7 @@ class Taelementosmenu extends Migration
         ]);
 
         $this->forge->addKey('FIELEMENOMENUID', true);
-        $this->forge->addForeignKey('FIPERMISOID', 'TAPERMISO', 'FIPERMISOID');
+        $this->forge->addForeignKey('FIROLID', 'TAROL', 'FIROLID');
         $this->forge->addForeignKey('FIELEMENTOMENUPADREID', 'TAELEMENTOSMENU', 'FIELEMENOMENUID');
         $this->forge->createTable('TAELEMENTOSMENU');
     }

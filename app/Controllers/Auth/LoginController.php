@@ -79,4 +79,8 @@ class LoginController extends BaseController
         session()->destroy();
         return redirect()->to(base_url());
     }
+
+    public function accesodenegado(){
+        return view('errors/accesodenegado');
+    }
 }

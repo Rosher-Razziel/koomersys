@@ -1,0 +1,67 @@
+/* Contenedor del switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+}
+
+/* Ocultamos el checkbox original */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* El slider (parte visible) */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 25px;
+}
+
+/* Círculo dentro del switch */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 2.5px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+/* Encendido (ON) */
+.switch input:checked+.slider {
+  background-color: #28a745;
+  /* Verde estilo Bootstrap */
+}
+
+/* Movimiento del circulito al activar */
+.switch input:checked+.slider:before {
+  transform: translateX(24px);
+}
+
+/* ERROR 403 ACCESO DENEGADO */
+.access-denied {
+  color: #dc3545;
+  /* rojo Bootstrap */
+}
+
+.access-denied-icon {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 20px;
+}
+
+.app-card {
+  border: 2px solid #dc3545;
+}

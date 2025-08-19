@@ -10,40 +10,40 @@ class TasucursalSeeder extends Seeder
     {
         $data =[
             [
-                'FCNOMBRESUCURSAL' => 'La ventanita espinosa',
                 'FIMARCAID' => 1,
+                'FCNOMBRESUCURSAL' => 'LA VENTANITA ESPINOSA - CONGRESO',
                 'FDFECHAALTA' => '2025-07-11 00:00:00',
                 'FDFECHAACTUALIZACION' => '2025-07-11 00:00:00',
                 'FCIMAGENSUCURSAL' => 'http://www.winrohs.com/img/logo.png',
                 'FIESTATUS' => 1
             ],
             [
-                'FCNOMBRESUCURSAL' => 'Todo para su pan',
                 'FIMARCAID' => 2,
+                'FCNOMBRESUCURSAL' => 'TODO PARA SU PAN - GUADIANA',
                 'FDFECHAALTA' => '2025-07-11 00:00:00',
                 'FDFECHAACTUALIZACION' => '2025-07-11 00:00:00',
                 'FCIMAGENSUCURSAL' => 'http://www.winrohs.com/img/logo.png',
                 'FIESTATUS' => 1
             ],
             [
-                'FCNOMBRESUCURSAL' => 'La esquinita',
                 'FIMARCAID' => 3,
+                'FCNOMBRESUCURSAL' => 'LA ESQUINITA - CONGRESO',
                 'FDFECHAALTA' => '2025-07-11 00:00:00',
                 'FDFECHAACTUALIZACION' => '2025-07-11 00:00:00',
                 'FCIMAGENSUCURSAL' => 'http://www.winrohs.com/img/logo.png',
                 'FIESTATUS' => 1
             ],
             [
-                'FCNOMBRESUCURSAL' => 'Starbucks',
                 'FIMARCAID' => 4,
+                'FCNOMBRESUCURSAL' => 'STARBUCKS - PATIO BOTURINI',
                 'FDFECHAALTA' => '2025-07-11 00:00:00',
                 'FDFECHAACTUALIZACION' => '2025-07-11 00:00:00',
                 'FCIMAGENSUCURSAL' => 'http://www.winrohs.com/img/logo.png',
                 'FIESTATUS' => 1
             ],
             [
-                'FCNOMBRESUCURSAL' => 'Alsea',
-                'FIMARCAID' => 5,
+                'FIMARCAID' => 4,
+                'FCNOMBRESUCURSAL' => 'STARBUCKS - BARRANCA EL MUERTO',
                 'FDFECHAALTA' => '2025-07-11 00:00:00',
                 'FDFECHAACTUALIZACION' => '2025-07-11 00:00:00',
                 'FCIMAGENSUCURSAL' => 'http://www.winrohs.com/img/logo.png',

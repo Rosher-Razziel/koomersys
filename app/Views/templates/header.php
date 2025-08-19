@@ -28,3 +28,5 @@
 <!-- SCRIPTS PARA NOTIFICATION Y AXIOS -->
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- CSS PERSONALIZADOS -->
+<link rel="stylesheet" href="<?= base_url('assets/css/styles.css'); ?>">

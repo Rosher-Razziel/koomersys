@@ -23,8 +23,7 @@ class RedirectIfAuthenticatedFilter implements FilterInterface
      *
      * @return RequestInterface|ResponseInterface|string|void
      */
-    public function before(RequestInterface $request, $arguments = null)
-    {
+    public function before(RequestInterface $request, $arguments = null){
         if (session()->get('isLoggedIn')) {
             return redirect()->to(base_url('dashboard'));
         }
@@ -42,8 +41,7 @@ class RedirectIfAuthenticatedFilter implements FilterInterface
      *
      * @return ResponseInterface|void
      */
-    public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
-    {
+    public function after(RequestInterface $request, ResponseInterface $response, $arguments = null){
         //
     }
 }
