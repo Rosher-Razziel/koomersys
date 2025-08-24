@@ -9,6 +9,8 @@ use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
 
+use App\Models\ElementosmenuModel;
+
 /**
  * Class BaseController
  *
@@ -36,6 +38,7 @@ abstract class BaseController extends Controller
      * @var list<string>
      */
     protected $helpers = [];
+    protected $menu;
 
     /**
      * Be sure to declare properties for any property fetch you initialized.
@@ -51,8 +54,17 @@ abstract class BaseController extends Controller
         // Do Not Edit This Line
         parent::initController($request, $response, $logger);
 
+        // Cargar menú aquí
+        $menuModel = new ElementosmenuModel();
+        $this->menu = $menuModel->obtenerMenuCompleto(session()->get('usuario.rol_id'));
         // Preload any models, libraries, etc, here.
 
         // E.g.: $this->session = service('session');
+    }
+
+    // Método helper para pasar siempre el menú a las vistas
+    protected function render(string $view, array $data = []){
+        $data['menu'] = $this->menu;
+        return view($view, $data);
     }
 }

@@ -46,27 +46,6 @@ class UsuariosModel extends Model
     protected $afterDelete    = [];
 
     /**
-     * Obtener todos los usuarios clasificados por estatus
-     * 1 = Activo, 2 = Suspendido, 3 = Eliminado
-     */
-    public function getUsuariosPorEstatus($estatus){
-        return $this->select("
-                    TAUSUARIO.FIUSUARIOID,
-                    TAUSUARIO.FCNOMBREUSUARIO,
-                    TAUSUARIO.FCAPELLIDOPATERNO,
-                    TAUSUARIO.FCAPELLIDOMATERNO,
-                    TAUSUARIO.FCEMAIL,
-                    TAROL.FCNOMBREROL,
-                    TASUCURSAL.FCNOMBRESUCURSAL,
-                    TAUSUARIO.FIESTATUS
-                ")
-                ->join('TAROL', 'TAROL.FIROLID = TAUSUARIO.FIROLID', 'LEFT')
-                ->join('TASUCURSAL', 'TASUCURSAL.FISUCURSALID = TAUSUARIO.FISUCURSALID', 'LEFT')
-                ->where('TAUSUARIO.FIESTATUS', $estatus)
-                ->findAll();
-    }
-
-    /**
      * Obtener todos los usuarios sin filtro
      */
     public function getTodosUsuarios(){
@@ -76,12 +55,82 @@ class UsuariosModel extends Model
                     TAUSUARIO.FCAPELLIDOPATERNO,
                     TAUSUARIO.FCAPELLIDOMATERNO,
                     TAUSUARIO.FCEMAIL,
+                    TAROL.FIROLID,
                     TAROL.FCNOMBREROL,
                     TASUCURSAL.FCNOMBRESUCURSAL,
-                    TAUSUARIO.FIESTATUS
-                ")
-                ->join('TAROL', 'TAROL.FIROLID = TAUSUARIO.FIROLID', 'LEFT')
-                ->join('TASUCURSAL', 'TASUCURSAL.FISUCURSALID = TAUSUARIO.FISUCURSALID', 'LEFT')
-                ->findAll();
+                    TAUSUARIO.FIESTATUS,
+                    TAMARCA.FIMARCAID,
+                    TAMARCA.FCNOMBRE")
+                    ->join('TAROL', 'TAROL.FIROLID = TAUSUARIO.FIROLID', 'LEFT')
+                    ->join('TASUCURSAL', 'TASUCURSAL.FISUCURSALID = TAUSUARIO.FISUCURSALID', 'LEFT')
+                    ->join('TAMARCA', 'TAMARCA.FIMARCAID = TASUCURSAL.FIMARCAID', 'LEFT')
+                    ->findAll();
+    }
+    /**
+     * Obtener todos los usuarios sin filtro
+     */
+    public function getTodosUsuariosMarca($marcaId = null){
+        return $this->select("
+                    TAUSUARIO.FIUSUARIOID,
+                    TAUSUARIO.FCNOMBREUSUARIO,
+                    TAUSUARIO.FCAPELLIDOPATERNO,
+                    TAUSUARIO.FCAPELLIDOMATERNO,
+                    TAUSUARIO.FCEMAIL,
+                    TAROL.FIROLID,
+                    TAROL.FCNOMBREROL,
+                    TASUCURSAL.FCNOMBRESUCURSAL,
+                    TAUSUARIO.FIESTATUS,
+                    TAMARCA.FIMARCAID,
+                    TAMARCA.FCNOMBRE")
+                    ->join('TAROL', 'TAROL.FIROLID = TAUSUARIO.FIROLID', 'LEFT')
+                    ->join('TASUCURSAL', 'TASUCURSAL.FISUCURSALID = TAUSUARIO.FISUCURSALID', 'LEFT')
+                    ->join('TAMARCA', 'TAMARCA.FIMARCAID = TASUCURSAL.FIMARCAID', 'LEFT')
+                    ->where('TAMARCA.FIMARCAID', $marcaId)
+                    ->findAll();
+    }
+    /**
+     * Obtener todos los usuarios clasificados por estatus
+     */
+    public function getUsuariosPorEstatus($estatus){
+        return $this->select("
+                    TAUSUARIO.FIUSUARIOID,
+                    TAUSUARIO.FCNOMBREUSUARIO,
+                    TAUSUARIO.FCAPELLIDOPATERNO,
+                    TAUSUARIO.FCAPELLIDOMATERNO,
+                    TAUSUARIO.FCEMAIL,
+                    TAROL.FIROLID,
+                    TAROL.FCNOMBREROL,
+                    TASUCURSAL.FCNOMBRESUCURSAL,
+                    TAUSUARIO.FIESTATUS")
+                    ->join('TAROL', 'TAROL.FIROLID = TAUSUARIO.FIROLID', 'LEFT')
+                    ->join('TASUCURSAL', 'TASUCURSAL.FISUCURSALID = TAUSUARIO.FISUCURSALID', 'LEFT')
+                    ->where('TAUSUARIO.FIESTATUS', $estatus)
+                    ->findAll();
+    }
+    /**
+     * Obtener todos los usuarios clasificados por estatus
+     */
+    public function getUsuarioPorId($userId){
+        return $this->select("
+            TAUSUARIO.FIUSUARIOID,
+            TAUSUARIO.FCNOMBREUSUARIO,
+            TAUSUARIO.FCAPELLIDOPATERNO,
+            TAUSUARIO.FCAPELLIDOMATERNO,
+            TAUSUARIO.FCEMAIL,
+            TAROL.FIROLID,
+            TAROL.FCNOMBREROL,
+            TASUCURSAL.FISUCURSALID,
+            TASUCURSAL.FCNOMBRESUCURSAL,
+            TAMARCA.FIMARCAID,
+            TAUSUARIO.FIESTATUS,
+            TAUSUARIO.FIEMAILVERIFICADO,
+            TAUSUARIO.FDFECHAALTA,
+            TAUSUARIO.FDFECHAACTUALIZACION")
+        ->join('TAROL', 'TAROL.FIROLID = TAUSUARIO.FIROLID', 'LEFT')
+        ->join('TASUCURSAL', 'TASUCURSAL.FISUCURSALID = TAUSUARIO.FISUCURSALID', 'LEFT')
+        ->join('TAMARCA', 'TAMARCA.FIMARCAID = TASUCURSAL.FIMARCAID', 'LEFT')
+        ->where('TAUSUARIO.FIUSUARIOID', $userId)
+        ->asArray()
+        ->first();
     }
 }

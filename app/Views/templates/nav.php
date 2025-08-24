@@ -1,3 +1,8 @@
+<!-- Loader -->
+<div id="loader" class="loader-overlay">
+  <div class="spinner"></div>
+</div>
+
 <div class="app-header-inner">
   <div class="container-fluid py-2">
     <div class="app-header-content">
@@ -161,10 +166,13 @@
           <div class="app-utility-item app-user-dropdown dropdown">
             <a class="dropdown-toggle" id="user-dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
               aria-expanded="false">
-              <img src="assets/images/user.png" alt="user profile">
+              <img src="<?= base_url('assets/images/user.png'); ?>" alt="user profile">
+
             </a>
             <ul class="dropdown-menu" aria-labelledby="user-dropdown-toggle">
-              <li><a class="dropdown-item" href="account.html"><?= session()->get('usuario.nombre') . ' ' . session()->get('usuario.apellido'); ?></a></li>
+              <li><a class="dropdown-item"
+                  href="account.html"><?= session()->get('usuario.nombre') . ' ' . session()->get('usuario.apellido'); ?></a>
+              </li>
               <li><a class="dropdown-item" href="settings.html">Configuracion</a></li>
               <li>
                 <hr class="dropdown-divider">
@@ -190,7 +198,7 @@
     <div class="app-branding">
       <a class="app-logo" href="<?= base_url(); ?>">
         <img class="logo-icon me-2" src="<?= base_url('assets/images/logos/logo-koomersys-v2.svg'); ?>" alt="logo">
-        <span class="logo-text">KoOmersys</span>
+        <span class="logo-text">Koomersys</span>
       </a>
 
     </div>

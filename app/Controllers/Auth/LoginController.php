@@ -19,9 +19,10 @@ class LoginController extends BaseController
 
         $usuarioModel = new UsuarioModel();
         $usuario = $usuarioModel
-            ->select('TAUSUARIO.*, TAROL.FCNOMBREROL, TASUCURSAL.FCNOMBRESUCURSAL')
+            ->select('TAUSUARIO.*, TAROL.FCNOMBREROL, TASUCURSAL.FCNOMBRESUCURSAL, TAMARCA.FIMARCAID')
             ->join('TAROL', 'TAROL.FIROLID = TAUSUARIO.FIROLID')
             ->join('TASUCURSAL', 'TASUCURSAL.FISUCURSALID = TAUSUARIO.FISUCURSALID')
+            ->join('TAMARCA', 'TAMARCA.FIMARCAID = TASUCURSAL.FIMARCAID', 'LEFT')
             ->where('FCEMAIL', $email)
             ->first();
 
@@ -36,6 +37,7 @@ class LoginController extends BaseController
         // Guardar en sesión
         session()->set([
             'isLoggedIn' => true,
+            'marca_id' => $usuario['FIMARCAID'],
             'usuario' => [
                 'id' => $usuario['FIUSUARIOID'],
                 'nombre' => $usuario['FCNOMBREUSUARIO'],

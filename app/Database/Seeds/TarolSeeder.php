@@ -26,10 +26,6 @@ class TarolSeeder extends Seeder
                 'FCDETALLEROL' => 'Puede gestionar los abastecimientos de la tienda'
             ],
             [
-                'FCNOMBREROL' => 'Repartidor / Logística',
-                'FCDETALLEROL' => 'Puede gestionar la logística de la tienda'
-            ],
-            [
                 'FCNOMBREROL' => 'Atención al Cliente',
                 'FCDETALLEROL' => 'Puede atender a los clientes y gestionar sus pedidos'
             ],
@@ -40,10 +36,6 @@ class TarolSeeder extends Seeder
             [
                 'FCNOMBREROL' => 'Contador',
                 'FCDETALLEROL' => 'Puede realizar contabilidad y facturación'
-            ],
-            [
-                'FCNOMBREROL' => 'Auditor',
-                'FCDETALLEROL' => 'Puede realizar auditoría contable'
             ],
             [
                 'FCNOMBREROL' => 'Cajero',

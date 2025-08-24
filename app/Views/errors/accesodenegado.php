@@ -45,8 +45,8 @@
   </div>
   <!--//container-->
 
-  <?= view('templates/footer'); ?>
-  <?php //view('templates/scripts'); ?>
+  <?php view('templates/footer'); ?>
+  <?php view('templates/scripts'); ?>
 </body>
 
 </html>

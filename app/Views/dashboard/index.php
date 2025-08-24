@@ -498,14 +498,12 @@
       </div>
       <!--//container-fluid-->
     </div>
-    <!--//app-content-->
     <?= view('templates/footer'); ?>
-    <!--//app-footer-->
   </div>
-  <!--//app-wrapper-->
-
   <?= view('templates/scripts'); ?> 
-
+  <!-- Charts JS -->
+	<script src="<?= base_url('assets/plugins/chart.js/chart.min.js'); ?>"></script>
+	<script src="<?= base_url('assets/js/index-charts.js'); ?>"></script>
 </body>
 
 </html>
