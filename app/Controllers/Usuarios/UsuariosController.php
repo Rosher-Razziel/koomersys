@@ -26,7 +26,8 @@ class UsuariosController extends BaseController{
     }
 
     public function agregar(){
-        return $this->render('users/agregar');
+        $data = $this->userService->getUserDataForCreate();
+        return $this->render('users/agregar', $data);
     }
 
     public function edit(string $userID, string $marcaId){
@@ -50,4 +51,8 @@ class UsuariosController extends BaseController{
     //     $usuariosModel->update($this->request->getPost('id'), $data);
     //     return redirect()->to('/usuarios');
     // }
+
+    public function ping(){
+        return $this->response->setJSON(['status' => 'ok']);
+    }
 }

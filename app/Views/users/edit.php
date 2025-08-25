@@ -45,53 +45,20 @@
                 <!-- <h5 class="mb-4">Editar Usuario</h5> -->
 
                 <div class="row g-3">
-                  <!-- Nombre -->
-                  <div class="col-md-4">
-                    <label for="fcnombreusuario" class="form-label text-black">Nombre</label>
-                    <input type="text" class="form-control" id="fcnombreusuario" name="FCNOMBREUSUARIO"
-                      placeholder="Ingrese el nombre"
-                      value="<?= old('FCNOMBREUSUARIO', esc($usuario['FCNOMBREUSUARIO'] ?? '')) ?>">
-                  </div>
-
-                  <!-- Apellido Paterno -->
-                  <div class="col-md-4">
-                    <label for="fcapellidopaterno" class="form-label text-black">Apellido Paterno</label>
-                    <input type="text" class="form-control" id="fcapellidopaterno" name="FCAPELLIDOPATERNO"
-                      placeholder="Ingrese el apellido paterno"
-                      value="<?= old('FCAPELLIDOPATERNO', esc($usuario['FCAPELLIDOPATERNO'] ?? '')) ?>">
-                  </div>
-
-                  <!-- Apellido Materno -->
-                  <div class="col-md-4">
-                    <label for="fcapellidomaterno" class="form-label text-black">Apellido Materno</label>
-                    <input type="text" class="form-control" id="fcapellidomaterno" name="FCAPELLIDOMATERNO"
-                      placeholder="Ingrese el apellido materno"
-                      value="<?= old('FCAPELLIDOMATERNO', esc($usuario['FCAPELLIDOMATERNO'] ?? '')) ?>">
-                  </div>
-
-                  <div class="col-md-4">
-                    <label for="fcapellidomaterno" class="form-label text-black">Correo Electronico</label>
-                    <input type="text" class="form-control" id="fcapellidomaterno" name="FCEMAIL"
-                      placeholder="ejemplo@marca.com" value="<?= old('FCEMAIL', esc($usuario['FCEMAIL'] ?? '')) ?>">
-                  </div>
-
-                  <!-- Rol -->
-                  <div class="col-md-4">
-                    <label for="firolid" class="form-label text-black">Rol</label>
-                    <select class="form-select" id="firolid" name="FIROLID">
-                      <?php foreach ($roles as $rol): ?>
-                      <?php if ($rol['FIROLID'] != 1) { ?>
-                        <option value="<?= esc($rol['FIROLID']) ?>"
-                          <?= old('FIROLID', $usuario['FIROLID']) == $rol['FIROLID'] ? 'selected' : '' ?>>
-                          <?= esc($rol['FCNOMBREROL']) ?>
-                        </option>
-                      <?php } ?>
-                      <?php endforeach; ?>
+                  <!-- Marca -->
+                  <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
+                    <label for="fimarcaid" class="form-label text-black">Marca</label>
+                    <select class="form-select" id="fimarcaid" name="FIMARCAID">
+                      <option value="0">STARBUCKS</option>
+                      <option value="1">BURGER KING</option>
+                      <option value="2">KOOMERSYS</option>
+                      <option value="3">CHILIS</option>
+                      <option value="4">LA VENTANITA</option>
                     </select>
                   </div>
 
                   <!-- Sucursal -->
-                  <div class="col-md-4">
+                  <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
                     <label for="fisucursalid" class="form-label text-black">Sucursal</label>
                     <select class="form-select" id="fisucursalid" name="FISUCURSALID">
                       <?php foreach ($sucursales as $sucursal): ?>
@@ -103,8 +70,60 @@
                     </select>
                   </div>
 
+                  <!-- Nombre -->
+                  <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
+                    <label for="fcnombreusuario" class="form-label text-black">Nombre</label>
+                    <input type="text" class="form-control" id="fcnombreusuario" name="FCNOMBREUSUARIO"
+                      placeholder="Ingrese el nombre"
+                      value="<?= old('FCNOMBREUSUARIO', esc($usuario['FCNOMBREUSUARIO'] ?? '')) ?>">
+                  </div>
+
+                  <!-- Apellido Paterno -->
+                  <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
+                    <label for="fcapellidopaterno" class="form-label text-black">Apellido Paterno</label>
+                    <input type="text" class="form-control" id="fcapellidopaterno" name="FCAPELLIDOPATERNO"
+                      placeholder="Ingrese el apellido paterno"
+                      value="<?= old('FCAPELLIDOPATERNO', esc($usuario['FCAPELLIDOPATERNO'] ?? '')) ?>">
+                  </div>
+
+                  <!-- Apellido Materno -->
+                  <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
+                    <label for="fcapellidomaterno" class="form-label text-black">Apellido Materno</label>
+                    <input type="text" class="form-control" id="fcapellidomaterno" name="FCAPELLIDOMATERNO"
+                      placeholder="Ingrese el apellido materno"
+                      value="<?= old('FCAPELLIDOMATERNO', esc($usuario['FCAPELLIDOMATERNO'] ?? '')) ?>">
+                  </div>
+
+                  <!-- Numero Telefonico -->
+                  <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
+                    <label for="fcnumerotelefonico" class="form-label text-black">Numero Telefonico</label>
+                    <input type="text" class="form-control" id="fcnumerotelefonico" name="FCNUMEROTELEFONICO"
+                      placeholder="Numero telefonico" value="56 3125 7537">
+                  </div>
+
+                  <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
+                    <label for="fcapellidomaterno" class="form-label text-black">Correo Electronico</label>
+                    <input type="text" class="form-control" id="fcapellidomaterno" name="FCEMAIL"
+                      placeholder="ejemplo@marca.com" value="<?= old('FCEMAIL', esc($usuario['FCEMAIL'] ?? '')) ?>">
+                  </div>
+
+                  <!-- Rol -->
+                  <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
+                    <label for="firolid" class="form-label text-black">Rol</label>
+                    <select class="form-select" id="firolid" name="FIROLID">
+                      <?php foreach ($roles as $rol): ?>
+                      <?php if ($rol['FIROLID'] != 1) { ?>
+                      <option value="<?= esc($rol['FIROLID']) ?>"
+                        <?= old('FIROLID', $usuario['FIROLID']) == $rol['FIROLID'] ? 'selected' : '' ?>>
+                        <?= esc($rol['FCNOMBREROL']) ?>
+                      </option>
+                      <?php } ?>
+                      <?php endforeach; ?>
+                    </select>
+                  </div>
+
                   <!-- Estatus -->
-                  <div class="col-md-4">
+                  <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
                     <label for="fiestatus" class="form-label text-black">Estatus</label>
                     <select class="form-select" id="fiestatus" name="FIESTATUS">
                       <option value="0" <?= $usuario['FIESTATUS'] == 0 ? 'selected' : '' ?>>Elininado</option>
@@ -114,7 +133,7 @@
                   </div>
 
                   <!-- Email verificado -->
-                  <div class="col-md-4">
+                  <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
                     <label for="fiemailverificado" class="form-label text-black">Email Verificado</label>
                     <select class="form-select" id="fiemailverificado" name="FIEMAILVERIFICADO">
                       <option value="1" <?= $usuario['FIEMAILVERIFICADO'] == 1 ? 'selected' : '' ?>>Sí</option>
@@ -123,14 +142,14 @@
                   </div>
 
                   <!-- Fecha Alta -->
-                  <div class="col-md-4">
+                  <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
                     <label for="fdfechaalta" class="form-label text-black text-black">Fecha de Alta</label>
                     <input type="text" class="form-control" id="fdfechaalta" disabled name="FDFECHAALTA"
                       value="<?= old('FDFECHAALTA', esc($usuario['FDFECHAALTA'] ?? '')) ?>">
                   </div>
 
                   <!-- Fecha Actualización -->
-                  <div class="col-md-4">
+                  <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
                     <label for="fdfechaactualizacion" class="form-label text-black text-black">Fecha de
                       Actualización</label>
                     <input type="text" class="form-control" id="fdfechaactualizacion" disabled
@@ -142,7 +161,7 @@
                 <!-- Botones -->
                 <div class="mt-4 d-flex justify-content-end ">
                   <button type="reset" class="btn btn-secondary me-2">Cancelar</button>
-                  <button type="submit" class="btn btn-primary">Guardar</button>
+                  <button type="submit" class="btn btn-primary text-white">Guardar</button>
                 </div>
               </form>
             </div>

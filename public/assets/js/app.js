@@ -42,27 +42,27 @@ window.addEventListener("beforeunload", function () {
 function responsiveSidePanel() {
     let w = window.innerWidth;
 	if(w >= 1200) {
-	    // if larger 
-	    //console.log('larger');
+		// if larger 
+		// console.log('larger');
 		sidePanel.classList.remove('sidepanel-hidden');
 		sidePanel.classList.add('sidepanel-visible');
 		
 	} else {
-	    // if smaller
-	    //console.log('smaller');
-	    sidePanel.classList.remove('sidepanel-visible');
+		// if smaller
+		// console.log('smaller');
+		sidePanel.classList.remove('sidepanel-visible');
 		sidePanel.classList.add('sidepanel-hidden');
 	}
 };
 
 sidePanelToggler.addEventListener('click', () => {
 	if (sidePanel.classList.contains('sidepanel-visible')) {
-		console.log('visible');
+		// console.log('visible');
 		sidePanel.classList.remove('sidepanel-visible');
 		sidePanel.classList.add('sidepanel-hidden');
 		
 	} else {
-		console.log('hidden');
+		// console.log('hidden');
 		sidePanel.classList.remove('sidepanel-hidden');
 		sidePanel.classList.add('sidepanel-visible');
 	}

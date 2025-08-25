@@ -1,24 +1,24 @@
 <?php
 
-namespace App\Models\Sucursales;
+namespace App\Models\Marcas;
 
 use CodeIgniter\Model;
 
-class SucursalesModel extends Model
+class MarcasModel extends Model
 {
-    protected $table            = 'TASUCURSAL';
-    protected $primaryKey       = 'FISUCURSALID';
+    protected $table            = 'TAMARCA';
+    protected $primaryKey       = 'FIMARCAID';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['FIMARCAID', 'FCNOMBRESUCURSAL', 'FCIMAGENSUCURSAL', 'FIESTATUS'];
+    protected $allowedFields    = [];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
 
     protected array $casts = [];
-    protected array $castHandlers = [];
+    protected array $castHandlers = ['FCNOMBRE', 'FCIMAGEN', 'FIESTATUS'];
 
     // Dates
     protected $useTimestamps = true;
@@ -44,18 +44,10 @@ class SucursalesModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-    function obtenerSucursalesUser($marcaId){
+    function obtenerMarcas(){
         return $this->select("
-            TASUCURSAL.FISUCURSALID,
-            TASUCURSAL.FCNOMBRESUCURSAL")
-            ->where('TASUCURSAL.FIMARCAID', $marcaId)
-            ->findAll();
-    }
-
-    function obtenerSucursales(){
-        return $this->select("
-            TASUCURSAL.FISUCURSALID,
-            TASUCURSAL.FCNOMBRESUCURSAL")
+            TAMARCA.FIMARCAID,
+            TAMARCA.FCNOMBRE")
             ->findAll();
     }
 }

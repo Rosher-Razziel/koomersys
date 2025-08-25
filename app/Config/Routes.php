@@ -13,6 +13,7 @@ $routes->group('', function ($routes) {
     $routes->post('/auth/login', 'Auth\LoginController::login');
     $routes->get('/auth/logout', 'Auth\LoginController::logout');
     $routes->get('/accesodenegado', 'Auth\LoginController::accesodenegado');
+    $routes->get('/ping', 'Usuarios\UsuariosController::ping');
 });
 
 // ============================================

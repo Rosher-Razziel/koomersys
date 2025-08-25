@@ -1,4 +1,5 @@
 app/Config/App.php
+app/Config/Database.php
 writable/debugbar/
 writable/session/
 writable/logs/

@@ -64,5 +64,4 @@
   </div>
   <script src="<?= base_url('assets/js/axios/auth.js'); ?>"></script>
 </body>
-
 </html>
